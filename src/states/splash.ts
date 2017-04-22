@@ -1,5 +1,5 @@
 import * as Phaser from "phaser";
-import {ASSETS} from "../constants";
+import {ASSETS, TEXTURES, GAME_STATES} from "../constants";
 
 export default class SplashState extends Phaser.State {
     init() {}
@@ -7,14 +7,15 @@ export default class SplashState extends Phaser.State {
     preload() {
         this.physics.startSystem(Phaser.Physics.ARCADE);
 
-        this.load.image("loaderBg", ASSETS.loaderBg);
-        this.load.image("loaderBar", ASSETS.loaderBar);
+        this.load.image(TEXTURES.LOADER_BG, ASSETS[TEXTURES.LOADER_BG]);
+        this.load.image(TEXTURES.LOADER_BAR, ASSETS[TEXTURES.LOADER_BAR]);
+        this.load.image(TEXTURES.PLAYER, ASSETS[TEXTURES.PLAYER]);
     }
 
     create() {
         // TODO this is not really working
-        let loaderBg = this.add.sprite(this.game.world.centerX, this.game.world.centerY, "loaderBg");
-        let loaderBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY, "loaderBar");
+        let loaderBg = this.add.sprite(this.game.world.centerX, this.game.world.centerY, TEXTURES.LOADER_BG);
+        let loaderBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY, TEXTURES.LOADER_BAR);
         loaderBg.anchor.setTo(0.5);
         loaderBar.anchor.setTo(0.5);
 
@@ -22,6 +23,6 @@ export default class SplashState extends Phaser.State {
     }
 
     render() {
-        this.game.state.start("Game");
+        this.game.state.start(GAME_STATES.MAIN);
     }
 }

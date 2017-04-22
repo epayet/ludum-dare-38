@@ -1,6 +1,7 @@
 import * as Phaser from "phaser";
 import SplashState from "./states/splash";
-import GameState from "./states/game";
+import MainState from "./states/main";
+import {GAME_STATES} from "./constants";
 
 class Game extends Phaser.Game {
 
@@ -10,8 +11,8 @@ class Game extends Phaser.Game {
 
         super(width, height, Phaser.AUTO, "", null);
 
-        this.state.add("Splash", SplashState, true);
-        this.state.add("Game", GameState);
+        this.state.add(GAME_STATES.SPLASH, SplashState, true);
+        this.state.add(GAME_STATES.MAIN, MainState);
     }
 }
 
