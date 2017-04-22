@@ -1,4 +1,3 @@
-import "../assets/images/phaser.png";
 import * as Phaser from "phaser";
 import SplashState from "./states/splash";
 import GameState from "./states/game";

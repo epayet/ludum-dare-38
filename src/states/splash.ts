@@ -9,10 +9,6 @@ export default class SplashState extends Phaser.State {
 
         this.load.image("loaderBg", ASSETS.loaderBg);
         this.load.image("loaderBar", ASSETS.loaderBar);
-        this.load.image("player", ASSETS.player);
-        this.load.image("item-1", ASSETS.item1);
-        this.load.image("item-2", ASSETS.item2);
-        this.load.image("item-3", ASSETS.item3);
     }
 
     create() {
